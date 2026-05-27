@@ -20,8 +20,6 @@
       --blue-bg:     #1aa3d9;
       --yellow:      #f5c518;
       --yellow-dark: #d4a800;
-      --pink:        #f5c518;
-      --pink-dark:   #d4a800;
       --white:       #ffffff;
       --black:       #0a0a0a;
       --card-bg:     rgba(255,255,255,0.95);
@@ -38,14 +36,11 @@
       color: var(--white);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      /* Blueprint grid pattern */
       background-image:
         linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
       background-size: 40px 40px;
     }
-
-    .display { font-family: 'Barlow Condensed', sans-serif; }
 
     /* ── NAV ─────────────────────────────────────── */
     nav {
@@ -70,16 +65,25 @@
       text-decoration: none;
     }
 
-    .nav-logo img {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
+    .nav-logo-badge {
+      width: 40px;
+      height: 40px;
+      background: var(--yellow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      color: var(--black);
+      flex-shrink: 0;
     }
 
     .nav-logo-text {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: 0.5px;
       color: var(--white);
       text-transform: uppercase;
@@ -110,9 +114,9 @@
     }
 
     .nav-cta:hover {
-      background: var(--pink-dark);
+      background: var(--yellow-dark);
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(213, 168, 0, 0.45);
+      box-shadow: 0 6px 20px rgba(213,168,0,0.45);
     }
 
     /* ── HERO ────────────────────────────────────── */
@@ -139,10 +143,18 @@
     }
 
     .hero-eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--yellow);
+      width: 8px; height: 8px;
+      background: #2ecc71;
       border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(46,204,113,0.6);
+      animation: pulse-dot 1.8s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(46,204,113,0.6); }
+      70%  { box-shadow: 0 0 0 7px rgba(46,204,113,0); }
+      100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); }
     }
 
     .hero h1 {
@@ -186,7 +198,7 @@
 
     .hero-btns { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 
-    .btn-pink {
+    .btn-yellow {
       background: var(--yellow);
       color: var(--black);
       text-decoration: none;
@@ -200,7 +212,7 @@
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     }
 
-    .btn-pink:hover {
+    .btn-yellow:hover {
       background: var(--yellow-dark);
       transform: translateY(-2px);
       box-shadow: 0 10px 28px rgba(213,168,0,0.45);
@@ -222,12 +234,9 @@
       transition: all 0.2s;
     }
 
-    .btn-ghost:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.6);
-    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
 
-    /* Hero right — card */
+    /* Hero card */
     .hero-card {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
@@ -243,7 +252,7 @@
       letter-spacing: 1.8px;
       text-transform: uppercase;
       color: #888;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .stats-grid {
@@ -273,155 +282,13 @@
       flex-shrink: 0;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 15px;
+      font-size: 14px;
       color: var(--white);
       line-height: 1;
     }
 
-    .stat-text-main {
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--black);
-      line-height: 1.2;
-    }
-
-    .stat-text-sub {
-      font-size: 11px;
-      color: #888;
-      font-weight: 500;
-      margin-top: 1px;
-    }
-
-    /* legacy — unused but kept to avoid breakage */
-    .stat-number { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 900; letter-spacing: -1px; line-height: 1; color: var(--black); }
-    .stat-number .small { font-size: 20px; }
-    .stat-number .accent { color: var(--blue-dark); }
-    .stat-label { font-size: 12px; color: #777; margin-top: 4px; font-weight: 500; }
-
-    /* ── RESULT BADGE ────────────────────────────── */
-    .result-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #edf7f0;
-      border: 1px solid #b2e0c0;
-      border-radius: 100px;
-      padding: 5px 12px;
-      font-size: 11px;
-      font-weight: 700;
-      color: #1a6b35;
-      letter-spacing: 0.3px;
-      margin-bottom: 14px;
-    }
-
-    .result-badge-dot { width: 6px; height: 6px; background: #2ecc71; border-radius: 50%; flex-shrink: 0; }
-
-    .evolt-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 10px;
-      font-size: 10px;
-      font-weight: 600;
-      color: #aaa;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    /* ── ONLINE COACHING ─────────────────────────── */
-    .online-section {
-      padding: 80px 32px;
-    }
-
-    .online-inner {
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-
-    .online-card {
-      background: var(--black);
-      border-radius: var(--radius-lg);
-      padding: 56px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(245,197,24,0.25);
-    }
-
-    .online-card::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 320px; height: 320px;
-      background: radial-gradient(circle, rgba(245,197,24,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .online-features {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .online-feature {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .online-feature-icon {
-      width: 34px;
-      height: 34px;
-      background: rgba(245,197,24,0.15);
-      border: 1px solid rgba(245,197,24,0.3);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      flex-shrink: 0;
-    }
-
-    .online-feature-title { font-weight: 700; font-size: 14px; color: var(--white); margin-bottom: 2px; }
-    .online-feature-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
-
-    .online-right { display: flex; flex-direction: column; gap: 16px; }
-
-    .online-stat-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-    }
-
-    .online-stat-card.highlight {
-      background: rgba(245,197,24,0.1);
-      border-color: rgba(245,197,24,0.3);
-    }
-
-    .online-stat-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 36px;
-      font-weight: 900;
-      color: var(--yellow);
-      letter-spacing: -1px;
-      line-height: 1;
-    }
-
-    .online-stat-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      margin-top: 4px;
-    }
-
-    @media (max-width: 960px) {
-      .online-card { grid-template-columns: 1fr; padding: 36px 28px; }
-      .online-section { padding: 60px 20px; }
-    }
+    .stat-text-main { font-weight: 700; font-size: 14px; color: var(--black); line-height: 1.2; }
+    .stat-text-sub { font-size: 11px; color: #888; font-weight: 500; margin-top: 1px; }
 
     .coach-tag {
       display: flex;
@@ -433,8 +300,7 @@
     }
 
     .coach-avatar {
-      width: 42px;
-      height: 42px;
+      width: 42px; height: 42px;
       background: linear-gradient(135deg, var(--blue-dark), var(--blue-deeper));
       border-radius: 50%;
       display: flex;
@@ -492,8 +358,7 @@
     }
 
     .trust-check {
-      width: 20px;
-      height: 20px;
+      width: 20px; height: 20px;
       background: var(--yellow);
       border-radius: 50%;
       display: flex;
@@ -505,18 +370,10 @@
       flex-shrink: 0;
     }
 
-    .trust-sep {
-      width: 1px;
-      height: 18px;
-      background: rgba(255,255,255,0.15);
-    }
+    .trust-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.15); }
 
     /* ── SECTION BASE ────────────────────────────── */
-    .section {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 80px 32px;
-    }
+    .section { max-width: 1160px; margin: 0 auto; padding: 80px 32px; }
 
     .section-eyebrow {
       font-size: 10px;
@@ -561,12 +418,24 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
     }
 
-    .review-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 16px;
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #edf7f0;
+      border: 1px solid #b2e0c0;
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #1a6b35;
+      letter-spacing: 0.3px;
+      margin-bottom: 14px;
     }
 
+    .result-badge-dot { width: 6px; height: 6px; background: #2ecc71; border-radius: 50%; flex-shrink: 0; }
+
+    .review-stars { display: flex; gap: 3px; margin-bottom: 16px; }
     .star { color: var(--yellow); font-size: 16px; }
 
     .review-text {
@@ -576,11 +445,7 @@
       margin-bottom: 20px;
     }
 
-    .review-divider {
-      height: 1px;
-      background: #e8e8e8;
-      margin-bottom: 16px;
-    }
+    .review-divider { height: 1px; background: #e8e8e8; margin-bottom: 16px; }
 
     .review-author-name {
       font-size: 12px;
@@ -597,6 +462,18 @@
       text-transform: uppercase;
       color: var(--yellow-dark);
       margin-top: 3px;
+    }
+
+    .evolt-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      color: #aaa;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     /* ── SERVICES ────────────────────────────────── */
@@ -623,10 +500,7 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.25);
-    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.25); }
 
     .service-card.featured {
       background: var(--black);
@@ -636,8 +510,7 @@
 
     .service-badge {
       position: absolute;
-      top: -13px;
-      left: 24px;
+      top: -13px; left: 24px;
       background: var(--yellow);
       color: var(--black);
       font-size: 10px;
@@ -657,13 +530,7 @@
       margin-bottom: 6px;
     }
 
-    .service-tagline {
-      font-size: 12px;
-      color: #777;
-      margin-bottom: 22px;
-      line-height: 1.5;
-    }
-
+    .service-tagline { font-size: 12px; color: #777; margin-bottom: 22px; line-height: 1.5; }
     .service-card.featured .service-tagline { color: rgba(255,255,255,0.5); }
 
     .service-sessions {
@@ -696,13 +563,7 @@
 
     .service-card.featured .service-features li { color: rgba(255,255,255,0.75); }
 
-    .service-features li::before {
-      content: '✓';
-      font-weight: 800;
-      color: var(--blue-dark);
-      flex-shrink: 0;
-    }
-
+    .service-features li::before { content: '✓'; font-weight: 800; color: var(--blue-dark); flex-shrink: 0; }
     .service-card.featured .service-features li::before { color: var(--yellow); }
 
     .btn-service {
@@ -721,26 +582,79 @@
       color: var(--blue-dark);
     }
 
-    .btn-service:hover {
-      background: var(--blue-bg);
-      color: var(--white);
+    .btn-service:hover { background: var(--blue-bg); color: var(--white); }
+
+    .service-card.featured .btn-service { background: var(--yellow); border-color: var(--yellow); color: var(--black); }
+    .service-card.featured .btn-service:hover { background: var(--yellow-dark); border-color: var(--yellow-dark); }
+
+    /* ── ONLINE COACHING ─────────────────────────── */
+    .online-section { padding: 80px 32px; }
+
+    .online-card {
+      background: var(--black);
+      border-radius: var(--radius-lg);
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(245,197,24,0.25);
     }
 
-    .service-card.featured .btn-service {
-      background: var(--yellow);
-      border-color: var(--yellow);
-      color: var(--black);
+    .online-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(245,197,24,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .service-card.featured .btn-service:hover {
-      background: var(--yellow-dark);
-      border-color: var(--yellow-dark);
+    .online-features { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+
+    .online-feature { display: flex; gap: 14px; align-items: flex-start; }
+
+    .online-feature-icon {
+      width: 34px; height: 34px;
+      background: rgba(245,197,24,0.15);
+      border: 1px solid rgba(245,197,24,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
     }
+
+    .online-feature-title { font-weight: 700; font-size: 14px; color: var(--white); margin-bottom: 2px; }
+    .online-feature-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+    .online-right { display: flex; flex-direction: column; gap: 16px; }
+
+    .online-stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+
+    .online-stat-card.highlight { background: rgba(245,197,24,0.1); border-color: rgba(245,197,24,0.3); }
+
+    .online-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--yellow);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .online-stat-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
 
     /* ── BOOKING ─────────────────────────────────── */
-    .booking-section {
-      padding: 80px 32px;
-    }
+    .booking-section { padding: 80px 32px; }
 
     .booking-inner {
       max-width: 1160px;
@@ -751,22 +665,12 @@
       align-items: start;
     }
 
-    .booking-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-      margin-top: 40px;
-    }
+    .booking-steps { display: flex; flex-direction: column; gap: 22px; margin-top: 40px; }
 
-    .step {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
+    .step { display: flex; gap: 16px; align-items: flex-start; }
 
     .step-num {
-      width: 34px;
-      height: 34px;
+      width: 34px; height: 34px;
       border-radius: 50%;
       background: var(--yellow);
       color: var(--black);
@@ -779,18 +683,8 @@
       font-family: 'Barlow Condensed', sans-serif;
     }
 
-    .step-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .step-desc {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.55;
-    }
+    .step-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .step-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.55; }
 
     .booking-note {
       background: rgba(255,255,255,0.1);
@@ -812,7 +706,6 @@
       text-transform: uppercase;
     }
 
-    /* Calendly wrapper */
     .calendly-wrapper {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -820,10 +713,7 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
 
-    .calendly-inline-widget {
-      min-width: 280px;
-      height: 720px;
-    }
+    .calendly-inline-widget { min-width: 280px; height: 720px; }
 
     /* ── FOOTER ──────────────────────────────────── */
     footer {
@@ -837,7 +727,7 @@
     }
 
     footer strong { color: rgba(255,255,255,0.85); }
-    footer .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 900; letter-spacing: 1px; color: var(--white); text-transform: uppercase; margin-bottom: 8px; }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 900; letter-spacing: 1px; color: var(--white); text-transform: uppercase; margin-bottom: 8px; }
 
     /* ── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 960px) {
@@ -845,6 +735,8 @@
       .services-grid { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
       .booking-inner { grid-template-columns: 1fr; gap: 40px; }
+      .online-card { grid-template-columns: 1fr; padding: 36px 28px; }
+      .online-section { padding: 60px 20px; }
       .trust-bar-inner { gap: 18px; }
       .trust-sep { display: none; }
       nav { padding: 0 20px; }
@@ -863,7 +755,7 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="logo.png" alt="Upper Notch Coaching" />
+      <div class="nav-logo-text">Upper Notch<span>Coaching</span></div>
     </a>
     <a href="#book" class="nav-cta">Book Free Call</a>
   </nav>
@@ -875,9 +767,9 @@
       <div>
         <div class="hero-eyebrow">
           <span class="hero-eyebrow-dot"></span>
-          Richmond, Melbourne · Now Accepting Clients
+          Richmond, Melbourne · New Intake Now Open — Limited Spots
         </div>
-        <h1 class="display">Are You Ready<br />To Turn It<br /><span class="accent">Up A Notch?</span></h1>
+        <h1>Are You Ready<br />To Turn It<br /><span class="accent">Up A Notch?</span></h1>
         <p class="hero-sub">
           Upper Notch Coaching is qualified in nutrition and fitness coaching — helping busy men and women lose fat, build lean muscle, and perform at their best. Start with <strong style="color:var(--yellow);">2 complimentary sessions, no commitment.</strong>
         </p>
@@ -889,7 +781,7 @@
           <span class="pill" style="background:rgba(245,197,24,0.2); border-color:var(--yellow); color:var(--yellow);">2 Free Sessions · No Commitment</span>
         </div>
         <div class="hero-btns">
-          <a href="#book" class="btn-pink">Book Your Free Call →</a>
+          <a href="#book" class="btn-yellow">Book Your Free Call →</a>
           <a href="#services" class="btn-ghost">View Services ↓</a>
         </div>
       </div>
@@ -919,7 +811,7 @@
             </div>
           </div>
           <div class="stat-row">
-            <div class="stat-icon" style="font-size:13px;">📍</div>
+            <div class="stat-icon">📍</div>
             <div>
               <div class="stat-text-main">In-person & online coaching</div>
               <div class="stat-text-sub">Richmond, Melbourne — or anywhere</div>
@@ -956,7 +848,7 @@
   <!-- TESTIMONIALS -->
   <section class="section">
     <div class="section-eyebrow">Results</div>
-    <h2 class="section-title display">Clients Stay Because<br />The Process Works.</h2>
+    <h2 class="section-title">Clients Stay Because<br />The Process Works.</h2>
     <p class="section-sub">The best transformations come from consistency, clear expectations, and coaching that keeps standards high.</p>
 
     <div class="reviews-grid">
@@ -1023,7 +915,7 @@
   <div class="services-bg" id="services">
     <section class="section">
       <div class="section-eyebrow">Services</div>
-      <h2 class="section-title display">Simple Coaching Options.<br />Real Results.</h2>
+      <h2 class="section-title">Simple Coaching Options.<br />Real Results.</h2>
       <p class="section-sub">Every option includes fitness and nutrition coaching built around the same goal: fat loss, lean muscle gain, and a process you can actually stick to.</p>
 
       <div class="services-grid">
@@ -1078,11 +970,11 @@
 
   <!-- ONLINE COACHING -->
   <section class="online-section">
-    <div class="online-inner">
+    <div style="max-width:1160px; margin:0 auto;">
       <div class="online-card">
         <div>
           <div class="section-eyebrow">Online Coaching</div>
-          <h2 class="section-title display" style="color:var(--white);">Train With Me<br />From Anywhere.</h2>
+          <h2 class="section-title" style="color:var(--white);">Train With Me<br />From Anywhere.</h2>
           <p style="font-size:15px; color:rgba(255,255,255,0.65); line-height:1.7; max-width:420px; margin-bottom:0;">Can't make it to Richmond? No problem. Upper Notch online coaching delivers the same structured, evidence-based programs and nutrition support — fully remote, fully personalised.</p>
           <div class="online-features">
             <div class="online-feature">
@@ -1114,7 +1006,7 @@
               </div>
             </div>
           </div>
-          <a href="#book" class="btn-pink" style="margin-top:28px; display:inline-block;">Book a Free Call to Find Out More →</a>
+          <a href="#book" class="btn-yellow" style="margin-top:28px; display:inline-block;">Book a Free Call to Find Out More →</a>
         </div>
 
         <div class="online-right">
@@ -1148,7 +1040,7 @@
 
       <div>
         <div class="section-eyebrow">Book Online</div>
-        <h2 class="section-title display">Book Your Free<br />10-Min Call.</h2>
+        <h2 class="section-title">Book Your Free<br />10-Min Call.</h2>
         <p class="section-sub">Start with <strong style="color:var(--yellow);">2 complimentary sessions — no commitment, no pressure.</strong> Just a clear plan for where you want to go. Pick a time below and book directly on this page.</p>
 
         <div class="booking-steps">
