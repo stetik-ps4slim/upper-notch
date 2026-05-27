@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upper Notch Coaching | Fat Loss & Lean Muscle — Richmond, Melbourne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:        #1b9fd8;
+      --blue-dark:   #1485b5;
+      --blue-deeper: #0d6a93;
+      --blue-bg:     #1aa3d9;
+      --yellow:      #f5c518;
+      --yellow-dark: #d4a800;
+      --pink:        #f5c518;
+      --pink-dark:   #d4a800;
+      --white:       #ffffff;
+      --black:       #0a0a0a;
+      --card-bg:     rgba(255,255,255,0.95);
+      --card-border: rgba(255,255,255,0.3);
+      --radius:      14px;
+      --radius-lg:   22px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--blue-bg);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      /* Blueprint grid pattern */
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .display { font-family: 'Barlow Condensed', sans-serif; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14, 90, 130, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding: 0 32px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 0.5px;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--yellow);
+      text-transform: uppercase;
+    }
+
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--black);
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--pink-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(213, 168, 0, 0.45);
+    }
+
+    /* ── HERO ────────────────────────────────────── */
+    .hero {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 80px 32px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+
+    .hero-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .accent { color: var(--yellow); }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 440px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+
+    .hero-btns { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+    .btn-pink {
+      background: var(--yellow);
+      color: var(--black);
+      text-decoration: none;
+      padding: 16px 30px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-pink:hover {
+      background: var(--yellow-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(213,168,0,0.45);
+    }
+
+    .btn-ghost {
+      border: 2px solid rgba(255,255,255,0.35);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    /* Hero right — card */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      color: var(--black);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      border: 1px solid var(--card-border);
+    }
+
+    .hero-card-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 24px;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #f0f7fb;
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+
+    .stat-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--blue-bg);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-text-main {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--black);
+      line-height: 1.2;
+    }
+
+    .stat-text-sub {
+      font-size: 11px;
+      color: #888;
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    /* legacy — unused but kept to avoid breakage */
+    .stat-number { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 900; letter-spacing: -1px; line-height: 1; color: var(--black); }
+    .stat-number .small { font-size: 20px; }
+    .stat-number .accent { color: var(--blue-dark); }
+    .stat-label { font-size: 12px; color: #777; margin-top: 4px; font-weight: 500; }
+
+    /* ── RESULT BADGE ────────────────────────────── */
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #edf7f0;
+      border: 1px solid #b2e0c0;
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #1a6b35;
+      letter-spacing: 0.3px;
+      margin-bottom: 14px;
+    }
+
+    .result-badge-dot { width: 6px; height: 6px; background: #2ecc71; border-radius: 50%; flex-shrink: 0; }
+
+    .evolt-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      color: #aaa;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── ONLINE COACHING ─────────────────────────── */
+    .online-section {
+      padding: 80px 32px;
+    }
+
+    .online-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .online-card {
+      background: var(--black);
+      border-radius: var(--radius-lg);
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(245,197,24,0.25);
+    }
+
+    .online-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(245,197,24,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .online-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .online-feature {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .online-feature-icon {
+      width: 34px;
+      height: 34px;
+      background: rgba(245,197,24,0.15);
+      border: 1px solid rgba(245,197,24,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .online-feature-title { font-weight: 700; font-size: 14px; color: var(--white); margin-bottom: 2px; }
+    .online-feature-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+    .online-right { display: flex; flex-direction: column; gap: 16px; }
+
+    .online-stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+
+    .online-stat-card.highlight {
+      background: rgba(245,197,24,0.1);
+      border-color: rgba(245,197,24,0.3);
+    }
+
+    .online-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--yellow);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .online-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    @media (max-width: 960px) {
+      .online-card { grid-template-columns: 1fr; padding: 36px 28px; }
+      .online-section { padding: 60px 20px; }
+    }
+
+    .coach-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f5f5f3;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .coach-avatar {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-deeper));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    .coach-info-name { font-weight: 700; font-size: 14px; }
+    .coach-info-title { font-size: 11px; color: #888; }
+
+    .coach-cert {
+      margin-left: auto;
+      background: var(--blue-bg);
+      color: white;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── TRUST BAR ───────────────────────────────── */
+    .trust-bar {
+      background: rgba(0,0,0,0.25);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 18px 32px;
+    }
+
+    .trust-bar-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .trust-check {
+      width: 20px;
+      height: 20px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--black);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .trust-sep {
+      width: 1px;
+      height: 18px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ── SECTION BASE ────────────────────────────── */
+    .section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* ── REVIEWS ─────────────────────────────────── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .review-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 28px;
+      color: var(--black);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 16px;
+    }
+
+    .star { color: var(--yellow); font-size: 16px; }
+
+    .review-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .review-divider {
+      height: 1px;
+      background: #e8e8e8;
+      margin-bottom: 16px;
+    }
+
+    .review-author-name {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--black);
+    }
+
+    .review-author-type {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--yellow-dark);
+      margin-top: 3px;
+    }
+
+    /* ── SERVICES ────────────────────────────────── */
+    .services-bg {
+      background: rgba(0,0,0,0.15);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      color: var(--black);
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+    }
+
+    .service-card.featured {
+      background: var(--black);
+      color: var(--white);
+      border: 2px solid var(--yellow);
+    }
+
+    .service-badge {
+      position: absolute;
+      top: -13px;
+      left: 24px;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    .service-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .service-tagline {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .service-card.featured .service-tagline { color: rgba(255,255,255,0.5); }
+
+    .service-sessions {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .service-sessions span { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: #888; }
+    .service-card.featured .service-sessions span { color: rgba(255,255,255,0.45); }
+
+    .service-features {
+      list-style: none;
+      margin: 18px 0 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .service-card.featured .service-features li { color: rgba(255,255,255,0.75); }
+
+    .service-features li::before {
+      content: '✓';
+      font-weight: 800;
+      color: var(--blue-dark);
+      flex-shrink: 0;
+    }
+
+    .service-card.featured .service-features li::before { color: var(--yellow); }
+
+    .btn-service {
+      display: block;
+      text-align: center;
+      padding: 13px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+      background: transparent;
+      border: 2px solid var(--blue-bg);
+      color: var(--blue-dark);
+    }
+
+    .btn-service:hover {
+      background: var(--blue-bg);
+      color: var(--white);
+    }
+
+    .service-card.featured .btn-service {
+      background: var(--yellow);
+      border-color: var(--yellow);
+      color: var(--black);
+    }
+
+    .service-card.featured .btn-service:hover {
+      background: var(--yellow-dark);
+      border-color: var(--yellow-dark);
+    }
+
+    /* ── BOOKING ─────────────────────────────────── */
+    .booking-section {
+      padding: 80px 32px;
+    }
+
+    .booking-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.45fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .booking-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 14px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.55;
+    }
+
+    .booking-note {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 36px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+    }
+
+    .booking-note strong {
+      color: var(--yellow);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Calendly wrapper */
+    .calendly-wrapper {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .calendly-inline-widget {
+      min-width: 280px;
+      height: 720px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: rgba(0,0,0,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      padding: 40px 32px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.9;
+    }
+
+    footer strong { color: rgba(255,255,255,0.85); }
+    footer .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 900; letter-spacing: 1px; color: var(--white); text-transform: uppercase; margin-bottom: 8px; }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; padding: 48px 20px 36px; gap: 36px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .booking-inner { grid-template-columns: 1fr; gap: 40px; }
+      .trust-bar-inner { gap: 18px; }
+      .trust-sep { display: none; }
+      nav { padding: 0 20px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 44px; }
+      .section-title { font-size: 32px; }
+      .booking-section { padding: 60px 20px; }
+      .section { padding: 64px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Upper Notch Coaching" />
+    </a>
+    <a href="#book" class="nav-cta">Book Free Call</a>
+  </nav>
+
+
+  <!-- HERO -->
+  <section>
+    <div class="hero">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          Richmond, Melbourne · Now Accepting Clients
+        </div>
+        <h1 class="display">Are You Ready<br />To Turn It<br /><span class="accent">Up A Notch?</span></h1>
+        <p class="hero-sub">
+          Upper Notch Coaching is qualified in nutrition and fitness coaching — helping busy men and women lose fat, build lean muscle, and perform at their best. Start with <strong style="color:var(--yellow);">2 complimentary sessions, no commitment.</strong>
+        </p>
+        <div class="hero-pills">
+          <span class="pill">Fat Loss</span>
+          <span class="pill">Lean Muscle</span>
+          <span class="pill">Nutrition Coaching</span>
+          <span class="pill">Performance</span>
+          <span class="pill" style="background:rgba(245,197,24,0.2); border-color:var(--yellow); color:var(--yellow);">2 Free Sessions · No Commitment</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#book" class="btn-pink">Book Your Free Call →</a>
+          <a href="#services" class="btn-ghost">View Services ↓</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-label">Your coaching at a glance</div>
+        <div class="stats-grid">
+          <div class="stat-row">
+            <div class="stat-icon">PT</div>
+            <div>
+              <div class="stat-text-main">Qualified Personal Trainer</div>
+              <div class="stat-text-sub">& Nutrition Coach</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-icon">3x</div>
+            <div>
+              <div class="stat-text-main">Up to 3 sessions per week</div>
+              <div class="stat-text-sub">Foundation, Transformation & Elite options</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-icon">2★</div>
+            <div>
+              <div class="stat-text-main">2 complimentary sessions</div>
+              <div class="stat-text-sub">No commitment required to start</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-icon" style="font-size:13px;">📍</div>
+            <div>
+              <div class="stat-text-main">In-person & online coaching</div>
+              <div class="stat-text-sub">Richmond, Melbourne — or anywhere</div>
+            </div>
+          </div>
+        </div>
+        <div class="coach-tag">
+          <div class="coach-avatar">JS</div>
+          <div>
+            <div class="coach-info-name">Jazzay Sallah</div>
+            <div class="coach-info-title">Qualified Personal Trainer &amp; Nutrition Coach · Richmond</div>
+          </div>
+          <div class="coach-cert">Qualified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-check">✓</span> Qualified Personal Trainer &amp; Nutrition Coach</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-check">✓</span> 2 Complimentary Sessions</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-check">✓</span> No Commitment Required</div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span class="trust-check">✓</span> Limited Spots Per Intake</div>
+    </div>
+  </div>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="section-eyebrow">Results</div>
+    <h2 class="section-title display">Clients Stay Because<br />The Process Works.</h2>
+    <p class="section-sub">The best transformations come from consistency, clear expectations, and coaching that keeps standards high.</p>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="result-badge">
+          <span class="result-badge-dot"></span>
+          Lost 10kg · Gained 2kg lean muscle · 3 months
+        </div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"I came in wanting to lose weight but had no real idea what I was doing. In 3 months I dropped 10kg and actually gained 2kg of lean muscle — both verified on the Evolt scanner. The nutrition side is what made the biggest difference. I couldn't be happier with the results."</p>
+        <div class="review-divider"></div>
+        <div class="review-author-name">Marcus</div>
+        <div class="review-author-type">Fat Loss & Body Recomposition · Richmond</div>
+        <div class="evolt-tag">
+          <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Results verified via Evolt body composition scan
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="result-badge">
+          <span class="result-badge-dot"></span>
+          12kg lost · Leaner & stronger · 4 months
+        </div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"I'd tried losing weight on my own for years and always fell off. Jazzay built a plan around my schedule and finally made it feel manageable. I lost 12kg and felt stronger than ever. The accountability check-ins kept me honest every single week. I couldn't be happier."</p>
+        <div class="review-divider"></div>
+        <div class="review-author-name">Ellie</div>
+        <div class="review-author-type">Transformation Client · Melbourne</div>
+        <div class="evolt-tag">
+          <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Results verified via Evolt body composition scan
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="result-badge">
+          <span class="result-badge-dot"></span>
+          8kg lost · Strength PBs every month · 3 months
+        </div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"I wanted to get leaner without losing the strength I'd built. Jazzay dialled in my training and nutrition at the same time — I lost 8kg of fat, hit new personal bests, and the Evolt scans showed I actually kept my muscle. The whole process was structured and genuinely premium. Couldn't be happier."</p>
+        <div class="review-divider"></div>
+        <div class="review-author-name">David</div>
+        <div class="review-author-type">Elite Coaching Client · Richmond</div>
+        <div class="evolt-tag">
+          <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Results verified via Evolt body composition scan
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <div class="services-bg" id="services">
+    <section class="section">
+      <div class="section-eyebrow">Services</div>
+      <h2 class="section-title display">Simple Coaching Options.<br />Real Results.</h2>
+      <p class="section-sub">Every option includes fitness and nutrition coaching built around the same goal: fat loss, lean muscle gain, and a process you can actually stick to.</p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-name">Foundation</div>
+          <div class="service-tagline">Build consistency and start seeing fat loss results</div>
+          <div class="service-sessions">1x <span>session / week</span></div>
+          <ul class="service-features">
+            <li>Structured fat loss & muscle-building program</li>
+            <li>Personalised nutrition and macro targets</li>
+            <li>Weekly check-ins and habit tracking</li>
+            <li>Basic accountability support</li>
+            <li>Coaching app access</li>
+          </ul>
+          <a href="#book" class="btn-service">Book Consultation</a>
+        </div>
+
+        <div class="service-card featured">
+          <div class="service-badge">Most Popular</div>
+          <div class="service-name">Transformation</div>
+          <div class="service-tagline">Faster fat loss and lean muscle with full support</div>
+          <div class="service-sessions">2x <span>sessions / week</span></div>
+          <ul class="service-features">
+            <li>Progressively updated training program</li>
+            <li>Full nutrition coaching and meal structure guidance</li>
+            <li>Weekly check-ins + Mon–Fri messaging support</li>
+            <li>Technique feedback and habit coaching</li>
+            <li>Coaching app access</li>
+          </ul>
+          <a href="#book" class="btn-service">Book Consultation</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-name">Elite</div>
+          <div class="service-tagline">The fastest path to fat loss and lean muscle gain</div>
+          <div class="service-sessions">3x <span>sessions / week</span></div>
+          <ul class="service-features">
+            <li>Fully customised training & progression system</li>
+            <li>Advanced nutrition and lifestyle optimisation</li>
+            <li>Priority check-ins and unlimited support</li>
+            <li>Weekly program and lifestyle review</li>
+            <li>Coaching app access</li>
+          </ul>
+          <a href="#book" class="btn-service">Book Consultation</a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ONLINE COACHING -->
+  <section class="online-section">
+    <div class="online-inner">
+      <div class="online-card">
+        <div>
+          <div class="section-eyebrow">Online Coaching</div>
+          <h2 class="section-title display" style="color:var(--white);">Train With Me<br />From Anywhere.</h2>
+          <p style="font-size:15px; color:rgba(255,255,255,0.65); line-height:1.7; max-width:420px; margin-bottom:0;">Can't make it to Richmond? No problem. Upper Notch online coaching delivers the same structured, evidence-based programs and nutrition support — fully remote, fully personalised.</p>
+          <div class="online-features">
+            <div class="online-feature">
+              <div class="online-feature-icon">📋</div>
+              <div>
+                <div class="online-feature-title">Custom Training & Nutrition Program</div>
+                <div class="online-feature-desc">Built specifically for your goals, schedule, and starting point — updated as you progress.</div>
+              </div>
+            </div>
+            <div class="online-feature">
+              <div class="online-feature-icon">💬</div>
+              <div>
+                <div class="online-feature-title">Mon–Fri Messaging Support</div>
+                <div class="online-feature-desc">Direct access to Jazzay throughout the week for questions, form checks, and adjustments.</div>
+              </div>
+            </div>
+            <div class="online-feature">
+              <div class="online-feature-icon">📊</div>
+              <div>
+                <div class="online-feature-title">Weekly Check-ins & Progress Tracking</div>
+                <div class="online-feature-desc">Regular reviews with body composition monitoring — Evolt scanner guidance included where available.</div>
+              </div>
+            </div>
+            <div class="online-feature">
+              <div class="online-feature-icon">🍽️</div>
+              <div>
+                <div class="online-feature-title">Full Nutrition Coaching</div>
+                <div class="online-feature-desc">Personalised calorie and macro targets, meal structure guidance, and weekly nutrition adjustments.</div>
+              </div>
+            </div>
+          </div>
+          <a href="#book" class="btn-pink" style="margin-top:28px; display:inline-block;">Book a Free Call to Find Out More →</a>
+        </div>
+
+        <div class="online-right">
+          <div class="online-stat-card highlight">
+            <div class="online-stat-num">2</div>
+            <div class="online-stat-label">Complimentary sessions to start — no commitment</div>
+          </div>
+          <div class="online-stat-card">
+            <div class="online-stat-num" style="color:var(--white);">100%</div>
+            <div class="online-stat-label">Remote — train from anywhere in Australia</div>
+          </div>
+          <div class="online-stat-card">
+            <div class="online-stat-num" style="color:var(--white);">Same</div>
+            <div class="online-stat-label">Level of coaching as in-person — nothing cut back</div>
+          </div>
+          <div class="online-stat-card" style="background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.08);">
+            <div style="font-size:12px; font-weight:700; color:var(--yellow); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px;">Who it's for</div>
+            <div style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.7;">
+              Busy professionals who travel or work from home · People outside of Richmond who want premium coaching · Anyone who prefers the flexibility of training on their own schedule
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BOOKING -->
+  <section class="booking-section" id="book">
+    <div class="booking-inner">
+
+      <div>
+        <div class="section-eyebrow">Book Online</div>
+        <h2 class="section-title display">Book Your Free<br />10-Min Call.</h2>
+        <p class="section-sub">Start with <strong style="color:var(--yellow);">2 complimentary sessions — no commitment, no pressure.</strong> Just a clear plan for where you want to go. Pick a time below and book directly on this page.</p>
+
+        <div class="booking-steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Pick a time that works for you</div>
+              <div class="step-desc">Choose any available slot directly from the calendar on the right — no separate link, no new tab.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">We get on a quick call</div>
+              <div class="step-desc">10 minutes to talk through your goals, lifestyle, and what coaching could look like for you.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Walk away with a clear plan</div>
+              <div class="step-desc">Know exactly what to do next — whether you join or not.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-note">
+          <strong>Spots are limited</strong>
+          Coaching is kept personal. Every client gets a high standard of attention, which means intake is capped. If you're serious about making a change, the best time to book is now.
+        </div>
+      </div>
+
+      <div class="calendly-wrapper">
+        <div class="calendly-inline-widget"
+          data-url="https://calendly.com/theuppernotch/30min?hide_gdpr_banner=1&primary_color=1b9fd8"
+          style="min-width:280px;height:720px;">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Upper Notch Coaching</div>
+    <strong>Jazzay Sallah</strong> · Qualified Personal Trainer &amp; Nutrition Coach · Richmond, Melbourne, Victoria<br />
+    <br />
+    <span style="font-size:11px;">Your details are used only to contact you about Upper Notch Coaching and manage your enquiry.</span>
+  </footer>
+
+</body>
+</html>
